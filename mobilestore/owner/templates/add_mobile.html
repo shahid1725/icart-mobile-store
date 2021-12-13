@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+{%extends 'adminbase.html' %}
+
+{%block body_block%}
+
+<div class="card addcard text-white">
+<div class="container">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+
+            <form action="" method="post" enctype="multipart/form-data">
+
+                <h2  class="text-center addmobile"><strong>Add Mobiles</strong></h2>
+
+
+                {%csrf_token%}
+                {{form.as_p}}
+                <button type="submit" class="w-100 btn-grad"><strong>SAVE</strong></button>
+            </form>
+
+        </div>
+        <div class="col-3"></div>
+
+    </div>
+</div>
+</div>
+{%endblock%}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+
+{%block body_block%}
+
+
+<div class="row">
+    <div class="col">
+        <table class="table mt-5">
+
+            <tr>
+                <td class="text-center"><b>CART ITEM</b></td>
+                <td>PRICE</td>
+                <td>ACTION</td>
+            </tr>
+            {%for mob in items%}
+            <tr>
+                <td>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <img class="card-img-top" style="width:200px;height:250px;" src="{{mob.item.image.url}}" alt="Card image cap">
+
+
+                        </div>
+                        <div class="col-6">
+                            <h5>{{mob.item}}</h5>
+
+                            <h5>{{mob.status}}</h5>
+
+                        </div>
+                    </div>
+
+                </td>
+                <td>
+                    <h5> ₹{{mob.item.Price}}</h5>
+                </td>
+                <td>
+                    <a href="{%url 'removecart' mob.id %}" type="submit" class="removecartbtn">Remove</a>
+                    <a href="{%url 'orderitem' mob.id %}" type="submit" class="buycartbtn">Buy Now</a>
+                </td>
+
+            </tr>
+            {%endfor%}
+        </table>
+
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4"></div>
+            <div class="col-4">
+
+                <div class="card mb-5">
+
+                         <h5 class="mb-4" style="margin:auto;"><strong>TOTAL = {{total}} </strong></h5>
+                        <a href="" type="submit" class="btn btn-warning"><b>Buy All</b></a>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+{%endblock%}
+

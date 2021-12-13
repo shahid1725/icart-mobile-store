@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+
+{%block body_block%}
+
+
+<div class="row">
+    <div class="col">
+        <table class="table mt-5">
+
+
+            <tr>
+                <td class="text-center"><b>ITEM ORDERED</b></td>
+                <td>PRICE</td>
+                <td>ACTION</td>
+            </tr>
+            {%for mob in order%}
+            <tr>
+                <td>
+                    <div class="row">
+                        <div class="col-6">
+                                        <img class="card-img-top" style="width:200px;height:250px;" src="{{mob.item.image.url}}" alt="Card image cap">
+
+                        </div>
+                        <div class="col-6">
+                            <h5>{{mob.item}}</h5>
+                            <h5>{{mob.status}}</h5>
+
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <h5><b>₹{{mob.item.Price}}</b></h5>
+                </td>
+                <td>
+                    <a href="{%url 'removecart' mob.id %}" type="submit" class="cancelorderbtn">Cancel</a>
+                </td>
+            </tr>
+            {%endfor%}
+
+
+        </table>
+    </div>
+</div>
+
+{%endblock%}

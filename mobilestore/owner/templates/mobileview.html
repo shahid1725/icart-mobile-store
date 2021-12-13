@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{%extends 'adminbase.html' %}
+
+{%block body_block%}
+
+
+<!--<div class="container">-->
+<!--    <div class="row">-->
+<!--        <div class="col-6">-->
+
+<!--            <img src="{{mobile.image.url}}" class="card-img-top" alt="...">-->
+
+<!--        </div>-->
+<!--        <div class="col-6">-->
+
+
+<!--            <div class="card" style="width: 18rem;">-->
+<!--                <div class="card-body">-->
+<!--                    <h5 class="card-title">{{mobile.Name}}</h5>-->
+<!--                    <h5 class="card-title">{{mobile.Color}}</h5>-->
+<!--                    <h5 class="card-title">{{mobile.Price}}</h5>-->
+
+
+<!--                </div>-->
+<!--            </div>-->
+
+<!--        </div>-->
+<!--        <div class="col-4"></div>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--</div>-->
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="card addcard">
+            <div class="row">
+                <div class="col-6">
+                    <img src="{{mobile.image.url}}" class="card-img-top" alt="...">
+
+                </div>
+                <div class="col-6">
+
+                    <h5 class="card-title mt-5">{{mobile.Name}}</h5>
+                    <h5 class="card-title mt-5">{{mobile.Color}}</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, animi cumque cupiditate dolor, doloribus eligendi et minima necessitatibus nihil nostrum porro reiciendis repudiandae ullam? Accusamus dolor doloremque eos odio reiciendis?</p>
+                    <h5 class="card-title mt-5">₹ {{mobile.Price}}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{%endblock%}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% extends 'adminbase.html'%}
+{%block body_block%}
+
+<div class="card addcard text-black">
+<div class="container">
+
+    <div class="row">
+        <div class="col">
+            <form action="" method="get">
+                {{filter.form.as_p}}
+                <input type="submit" value="Check">
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+
+
+
+            <h2 class="text-center">Phone List</h2>
+
+            <table class="table">
+                <tr>
+                    <th>PHONE</th>
+                    <th>COLOR</th>
+                    <th>PRICE</th>
+                    <th>COPIES</th>
+                    <th>IMAGES</th>
+                    <th>ACTIONS</th>
+                </tr>
+                {%for Phone in filter.qs%}
+
+                <tr>
+                    <td>{{Phone.Name}}</td>
+                    <td>{{Phone.Color}}</td>
+                    <td>{{Phone.Price}}</td>
+                    <td>{{Phone.Copies}}</td>
+                    <td><img src="{{Phone.image.url}}" alt="" width="100px" height="100px"></td>
+                    <td>
+                        <a href="{%url 'editphone' Phone.id%}" class="btn btn-warning">EDIT</a>
+                        <a href="{%url 'removephone' Phone.id%}" class="btn btn-danger">REMOVE</a>
+                        <a href="{%url 'mobileview' Phone.id%}" class="btn btn-success">VIEW</a>
+                    </td>
+                </tr>
+
+                {%endfor%}
+            </table>
+
+
+        </div>
+        <div class="col-1"></div>
+
+    </div>
+</div>
+</div>
+
+{%endblock%}
